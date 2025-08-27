@@ -6,8 +6,13 @@ def test(prompt):
     print(response.text)
 
 if __name__ == '__main__':
-    question = "시스템반도체란 무엇인가요?"
+    question = "인공지능이란 무엇인가요?"
 
-    prompt = f"{question}에 대해서 설명해줘."
+    prompt = f"'{question}'에 대해 설명해 줘."
 
     test(prompt)
+
+
+
+
+

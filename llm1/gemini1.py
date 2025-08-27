@@ -1,20 +1,19 @@
-from numpy.f2py.crackfortran import endifs
-from openai import chat
-
 from myllm.MyApi import geminiModel
 
-def test(chat):
+def test(txt):
     model = geminiModel()
-    chat = model.start_chat(history=[])
-    print("\n--- Gemini 챗 봇 시작 ---")
+    response = model.generate_content(txt)
+    return response.text
 
 if __name__ == '__main__':
     while True:
-        user_message=input("나:")
-        if user_message.lower()=='종료':
+        txt = input(" 질문을 입력 하세요 (q)")
+        if txt == "q":
             break
-        response=chat.send_message(user_message)
+        result = test(txt)
+        print(result)
 
-        print("Gemini:", response.text)
-    print("--- 챗 봇 종료 ---")
-    print(chat.history)
+
+
+
+
